@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProStore - Modern Web Experience</title>
+    <title>FitPulse - Elevate Your Fitness Journey</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,10 +12,11 @@
 
     <!-- Navigation Bar -->
     <header class="navbar">
-        <div class="logo">Pro<span>Store</span></div>
+        <div class="logo">Fit<span>Pulse</span></div>
         <nav>
             <a href="#hero">Home</a>
-            <a href="#products">Products</a>
+            <a href="#workouts">Workouts</a>
+            <a href="#plans">Plans</a>
             <a href="#features">Features</a>
         </nav>
         <div class="auth-buttons">
@@ -27,29 +28,55 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>Build Your Future With Us</h1>
-            <p>Experience the next generation of digital tools, secure accounts, and seamless checkout flows.</p>
-            <a href="#products" class="btn-primary animate-bounce">Explore Products</a>
+            <h1>Transform Your Body & Mind</h1>
+            <p>Access world-class workout programs, track your performance, and join a thriving community dedicated to fitness.</p>
+            <a href="#plans" class="btn-primary">Start Training Today</a>
         </div>
     </section>
 
-    <!-- Products & Checkout UI Section -->
-    <section id="products" class="products-section">
-        <h2>Featured Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="card-image"></div>
-                <h3>Pro Membership</h3>
-                <p class="price">$29.00 / mo</p>
-                <p class="desc">Access all premium features, custom themes, and priority support.</p>
-                <button class="btn-primary checkout-btn" onclick="openCheckout('Pro Membership', '$29.00')">Instant Checkout</button>
+    <!-- Workout Plans & Checkout UI Section -->
+    <section id="plans" class="plans-section">
+        <h2>Choose Your Training Plan</h2>
+        <div class="plan-grid">
+            <div class="plan-card">
+                <div class="card-image strength-bg"></div>
+                <h3>Strength & Hypertrophy</h3>
+                <p class="price">$19.00 / mo</p>
+                <p class="desc">Build muscle mass and increase raw strength with progressive overload routines.</p>
+                <button class="btn-primary checkout-btn" onclick="openCheckout('Strength & Hypertrophy', '$19.00')">Instant Checkout</button>
             </div>
-            <div class="product-card">
-                <div class="card-image"></div>
-                <h3>Enterprise Suite</h3>
-                <p class="price">$99.00 / mo</p>
-                <p class="desc">Unlimited accounts, advanced analytics, and dedicated cloud hosting.</p>
-                <button class="btn-primary checkout-btn" onclick="openCheckout('Enterprise Suite', '$99.00')">Instant Checkout</button>
+            <div class="plan-card featured-card">
+                <div class="card-image shred-bg"></div>
+                <h3>Ultimate Shred & Cardio</h3>
+                <p class="price">$25.00 / mo</p>
+                <p class="desc">High-intensity interval training designed to melt fat and boost endurance.</p>
+                <button class="btn-primary checkout-btn" onclick="openCheckout('Ultimate Shred & Cardio', '$25.00')">Instant Checkout</button>
+            </div>
+            <div class="plan-card">
+                <div class="card-image elite-bg"></div>
+                <h3>Elite Personal Coaching</h3>
+                <p class="price">$89.00 / mo</p>
+                <p class="desc">1-on-1 virtual training, custom macro coaching, and direct expert feedback.</p>
+                <button class="btn-primary checkout-btn" onclick="openCheckout('Elite Personal Coaching', '$89.00')">Instant Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2>Why Train With FitPulse?</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h3>📊 Progress Tracking</h3>
+                <p>Log your weights, reps, and personal records with intuitive interactive dashboards.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🥗 Nutrition Guides</h3>
+                <p>Custom meal formulas and recipes tailored precisely to your fitness goals.</p>
+            </div>
+            <div class="feature-box">
+                <h3>👥 Community Support</h3>
+                <p>Connect with fellow athletes, share milestones, and stay motivated every single day.</p>
             </div>
         </div>
     </section>
@@ -58,8 +85,8 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('loginModal')">&times;</span>
-            <h2>Welcome Back</h2>
-            <form onsubmit="event.preventDefault(); alert('Backend required to authenticate!');">
+            <h2>Welcome Back, Athlete</h2>
+            <form onsubmit="event.preventDefault(); alert('Backend required to authenticate user session!');">
                 <input type="email" placeholder="Email Address" required>
                 <input type="password" placeholder="Password" required>
                 <button type="submit" class="btn-primary full-width">Log In</button>
@@ -71,22 +98,22 @@
     <div id="signupModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('signupModal')">&times;</span>
-            <h2>Create Account</h2>
-            <form onsubmit="event.preventDefault(); alert('Backend required to register user!');">
+            <h2>Join FitPulse</h2>
+            <form onsubmit="event.preventDefault(); alert('Backend required to register new user profile!');">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Email Address" required>
                 <input type="password" placeholder="Create Password" required>
-                <button type="submit" class="btn-primary full-width">Sign Up</button>
+                <button type="submit" class="btn-primary full-width">Create Account</button>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 ProStore. All rights reserved.</p>
+        <p>&copy; 2026 FitPulse. Push your limits.</p>
     </footer>
 
-    <!-- Basic UI Toggle Script -->
+    <!-- Interactive UI Script -->
     <script>
         function openModal(id) {
             document.getElementById(id).style.display = 'flex';
@@ -95,7 +122,7 @@
             document.getElementById(id).style.display = 'none';
         }
         function openCheckout(item, price) {
-            alert(`Ready to checkout: ${item} for ${price}\n(Note: Integrating Stripe/PayPal requires backend server logic).`);
+            alert(`Ready to checkout: ${item} for ${price}\n(Note: Integrating Stripe or PayPal payment SDKs requires backend server setup).`);
         }
     </script>
 </body>
